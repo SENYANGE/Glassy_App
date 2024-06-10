@@ -1,0 +1,55 @@
+MDScreen:
+    name:'update_customer'
+    GridLayout:
+        cols: 1
+        MDToolbar:
+            title: "Update Customer"
+
+        RelativeLayout:
+           
+            MDCard:
+                size_hint: 0.6, 0.6
+                orientation: 'vertical'
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                elevation: 10
+
+                RelativeLayout:
+                    MDLabel:
+                        text: "Sign in"
+                        theme_text_color: "Secondary"
+                        pos_hint: {'center_y': 0.88, 'center_x': 0.55}
+                        font_style: 'H4'
+
+                    MDTextField:
+                        id: username
+                        hint_text: 'User name'
+                        helper_text: ''
+                        helper_text_mode: 'on_error'
+                        icon_right: ''
+                        size_hint: 0.8, .18
+                        pos_hint: {'center_x': 0.5, 'center_y':  0.65}
+
+                    MDTextField:
+                        id: password
+                        hint_text: 'Password'
+                        password: True
+                        password_mask: '•'
+                        color_active: app.theme_cls.primary_light
+                        icon_left: "key-variant"
+                        size_hint: 0.8, .20
+                        pos_hint: {'center_x': 0.5, 'center_y':  0.4}
+
+                  
+                    MDIconButton:
+                        icon: "eye"
+                        ripple_scale: .5
+                        pos_hint: {'center_x': 0.85,"center_y": .4}
+                        pos: password.width - self.width + dp(8), 0
+                        
+
+                    MDFlatButton:
+                        text: 'Sign in'
+                        font_size: dp(18)
+                        pos_hint: {'center_x': 0.8, 'center_y': 0.15}
+                        text_color: app.theme_cls.primary_color
+                        

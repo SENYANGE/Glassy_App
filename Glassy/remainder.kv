@@ -1,0 +1,91 @@
+MDScreen:
+    name:'remainder'
+    MDNavigationLayout:
+        ScreenManager:
+            Screen:
+                BoxLayout:
+                    orientation:'vertical'
+                    MDToolbar:
+                        title:'Remainder'
+                        left_action_items:[['menu',lambda x: nav_bar.set_state('open')]]
+                    
+                    Widget:
+        MDNavigationDrawer:
+            id:nav_bar
+            BoxLayout:
+                orientation:'vertical'
+                Image:
+                    source:'Glassy/resources/pass.jpg'
+                MDLabel:
+                    id:username_tag
+                    text:'username'
+                    pos_hint:{'center-x':.8,}
+                
+                MDRectangleFlatIconButton:
+                    icon:'home'
+                    text:'Home'
+                    font_size:'20sp'
+                    size_hint_x:1
+                    size_hint_y:0.3
+                    on_press:
+                        nav_bar.set_state("close")
+                        app.root.current = "homepage"
+        
+                MDRectangleFlatIconButton:
+                    icon:'cart-plus'
+                    text:'Purchases'
+                    font_size:'20sp'
+                    size_hint_x:1
+                    size_hint_y:0.3
+                    on_press:
+                        nav_bar.set_state("close")
+                        app.root.current = "purchases"
+                MDRectangleFlatIconButton:
+                    icon:'cash-minus'
+                    text:'Expenses'
+                    font_size:'20sp'
+                    size_hint_x:1
+                    size_hint_y:0.3
+                    on_press:
+                        nav_bar.set_state("close")
+                        app.root.current = "expenses"
+                MDRectangleFlatIconButton:
+                    icon:'cash-plus'
+                    text:'Sales'
+                    font_size:'20sp'
+                    size_hint_x:1
+                    size_hint_y:0.3
+                    on_press:
+                        nav_bar.set_state("close")
+                        app.root.current = "sales"
+                MDRectangleFlatIconButton:
+                    icon:'history'
+                    text:'Customer Records'
+                    font_size:'20sp'
+                    size_hint_x:1
+                    size_hint_y:0.3
+                    on_press:
+                        nav_bar.set_state("close")
+                        app.root.current = "customers"
+                MDRectangleFlatIconButton:
+                    icon:'calendar-refresh'
+                    text:'Remainder'
+                    font_size:'20sp'
+                    size_hint_x:1
+                    size_hint_y:0.3
+                    on_press:
+                        nav_bar.set_state("close")
+                        app.root.current = "remainder"
+                MDRectangleFlatIconButton:
+                    icon:'power'
+                    text:'Lgout'
+                    font_size:'20sp'
+                    size_hint_x:1
+                    size_hint_y:0.3
+                    color:(0,0,0, 1)
+                    on_release: 
+                        nav_bar.set_state("close")
+                    on_release: app.logout_confirmation_dialog()
+                Widget:
+    MDLabel:
+        text:"Remainder calender page" 
